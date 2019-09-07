@@ -29,5 +29,9 @@ echo "---Start Server---"
 cd /serverfiles/bf2
 rm -rf /serverfiles/bf2/start.sh
 cp /opt/scripts/start.sh /serverfiles/bf2/start.sh
+rm -rf /serverfiles/bf2/mods/bf2/settings/maplist.con
+cp /opt/scripts/maplist.con /serverfiles/bf2/mods/bf2/settings/maplist.con
+rm -rf /serverfiles/bf2/mods/bf2/settings/serversettings.con
+cp /opt/scripts/serversettings.con /serverfiles/bf2/mods/bf2/settings/serversettings.con
 chmod +x /serverfiles/bf2/start.sh
 ./start.sh
