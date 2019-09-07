@@ -26,4 +26,4 @@ RUN chown -R bf2 $DATA_DIR
 USER bf2
 
 #Server Start
-ENTRYPOINT ["/opt/scripts/start-server.sh"]
+ENTRYPOINT ["/opt/scripts/setup.sh"]
