@@ -2,12 +2,13 @@ FROM ubuntu
 
 MAINTAINER johnodon
 
+RUN apt-add-repository multiverse
 RUN apt-get update && apt-get -y dist-upgrade
-RUN apt-get -y install wget screen unzip curl
+RUN apt-get -y install wget screen unzip curl expect
 
-ENV DATA_DIR="/home/bf2"
+ENV DATA_DIR="/serverfiles"
 ENV SERVER_DIR="${DATA_DIR}/bf2"
-ENV INSTALLER_DIR="${DATA_DIR}/installer"
+ENV INSTALLER_DIR="${DATA_DIR}/tmp"
 ENV UID=99
 ENV GID=100
 
@@ -21,7 +22,7 @@ RUN ulimit -n 2048
 
 ADD /scripts/ /opt/scripts/
 RUN chmod -R 770 /opt/scripts/
-RUN chown -R terraria /opt/scripts
+RUN chown -R bf2 /opt/scripts
 
 USER bf2
 
