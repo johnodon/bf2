@@ -1,31 +1,13 @@
 #!/bin/bash
-INSTALLED="$(find $DATA_DIR -name bf2-* | cut -d '-' -f 2,3)"
 
-echo "---Version Check---"
-if [ ! -d "${SERVER_DIR}/lib" ]; then
-    echo "---Terraria not found, downloading!---"
-    cd ${SERVER_DIR}
-    wget -q - http://terraria.org/server/terraria-server-$LAT_V.zip
-    unzip -q ${SERVER_DIR}/terraria-server-$LAT_V.zip
-    mv ${SERVER_DIR}/$LAT_V/Linux/* ${SERVER_DIR}
-    rm -R ${SERVER_DIR}/$LAT_V
-    rm -R ${SERVER_DIR}/terraria-server-$LAT_V.zip
-    touch ${DATA_DIR}/terraria-$LAT_V
-elif [ "$LAT_V" != "$CUR_V" ]; then
-    echo "---Newer version found, installing!---"
-    rm ${DATA_DIR}/terraria-$CUR_V
-    cd ${SERVER_DIR}
-    wget -q - http://terraria.org/server/terraria-server-$LAT_V.zip
-    unzip -q ${SERVER_DIR}/terraria-server-$LAT_V.zip
-    mv ${SERVER_DIR}/$LAT_V/Linux/* ${SERVER_DIR}
-    rm -R ${SERVER_DIR}/$LAT_V
-    rm -R ${SERVER_DIR}/terraria-server-$LAT_V.zip
-    touch ${DATA_DIR}/terraria-$LAT_V
-elif [ "$LAT_V" == "$CUR_V" ]; then
-    echo "---Terraria Version up-to-date---"
-else
-  echo "---Something went wrong, putting server in sleep mode---"
-  sleep infinity
+echo "---BF2 Check---"
+if [ ! -f "${SERVER_DIR}/start.sh" ]; then
+    echo "---BF2 not found, downloading!---"
+    cd ${DATA_DIR}
+    wget -q - ftp://ftp.bf-games.net/server-files/bf2/bf2-linuxded-1.5.3153.0-installer.tgz
+    https://www.bf2hub.com/downloads/BF2Hub-Unranked-Linux-R3.tar.gz
+    tar -xvf ${DATA_DIR}/bf2-linuxded-1.5.3153.0-installer.tgz
+    rm -R ${DATA_DIR}/bf2-linuxded-1.5.3153.0-installer.tgz
 fi
 
 echo "---Prepare Server---"
