@@ -2,10 +2,8 @@
 
 echo "---BF2 Check---"
 if [ ! -f "${SERVER_DIR}/start.sh" ]; then
-    echo "---BF2 not found, downloading!---"
+    echo "---BF2 not installed, extracting!---"
     cd /serverfiles
-    wget --no-check-certificate https://bigfatmoose.com/bf2-linuxded-1.5.3153.0-installer.sh
-    echo "---Prepare Server---"
     chmod +x /opt/scripts
     ./opt/scripts/extract
 fi
