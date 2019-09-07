@@ -5,7 +5,7 @@ if [ ! -f "${SERVER_DIR}/start.sh" ]; then
     echo "---BF2 not installed, extracting!---"
     cd /serverfiles
     chmod +x /opt/scripts
-    ./opt/scripts/extract
+    /opt/scripts/extract
 fi
 
 echo "---Server ready---"
