@@ -1,6 +1,5 @@
 #!/bin/bash
-LAT_V="${GAME_VERSION//.}"
-CUR_V="$(find $DATA_DIR -name terraria-* | cut -d '-' -f 2,3)"
+INSTALLED="$(find $DATA_DIR -name bf2-* | cut -d '-' -f 2,3)"
 
 echo "---Version Check---"
 if [ ! -d "${SERVER_DIR}/lib" ]; then
