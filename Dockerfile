@@ -17,8 +17,8 @@ ENV UID=99
 ENV GID=100
 
 RUN mkdir /serverfiles
-RUN mkdir /serverfiles/bf2
-RUN mkdir /serverfiles/tmp
+RUN mkdir -p /serverfiles/bf2
+RUN mkdir -p /serverfiles/config
 RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
 RUN chown -R bf2 $DATA_DIR
 
