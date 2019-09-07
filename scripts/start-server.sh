@@ -8,7 +8,7 @@ if [ ! -f "/serverfiles/bf2-linuxded-1.5.3153.0-installer.tgz" ]; then
     wget -nc -q --show-progress --progress=bar:force:noscroll https://www.bf2hub.com/downloads/BF2Hub-Unranked-Linux-R3.tar.gz
     if [ ! -f "/serverfiles/bf2/start.sh" ]; then
         echo "---Extracting!---"
-        tar -xvf /serverfiles/bf2-linuxded-1.5.3153.0-installer.tgz -C /serverfiles/bf2
+        tar -xvf /serverfiles/bf2-linuxded-1.5.3153.0-installer.tgz -C /serverfiles
         chmod +x /opt/scripts
         /opt/scripts/extract
     fi        
