@@ -22,8 +22,6 @@ RUN mkdir /serverfiles/tmp
 RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
 RUN chown -R bf2 $DATA_DIR
 
-RUN ulimit -n 2048
-
 ADD /scripts/ /opt/scripts/
 RUN chmod -R 770 /opt/scripts/
 RUN chown -R bf2 /opt/scripts
