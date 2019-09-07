@@ -7,6 +7,7 @@ RUN apt-get -y install wget screen unzip curl
 
 ENV DATA_DIR="/home/bf2"
 ENV SERVER_DIR="${DATA_DIR}/bf2"
+ENV INSTALLER_DIR="${DATA_DIR}/installer"
 ENV UID=99
 ENV GID=100
 
