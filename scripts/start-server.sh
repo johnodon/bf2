@@ -3,18 +3,16 @@
 echo "---BF2 Check---"
 if [ ! -f "${SERVER_DIR}/start.sh" ]; then
     echo "---BF2 not found, downloading!---"
-    cd ${DATA_DIR}
+    cd ${INSTALLER_DIR}
     wget -q - ftp://ftp.bf-games.net/server-files/bf2/bf2-linuxded-1.5.3153.0-installer.tgz
-    https://www.bf2hub.com/downloads/BF2Hub-Unranked-Linux-R3.tar.gz
-    tar -xvf ${DATA_DIR}/bf2-linuxded-1.5.3153.0-installer.tgz
-    rm -R ${DATA_DIR}/bf2-linuxded-1.5.3153.0-installer.tgz
+    tar -xvf bf2-linuxded-1.5.3153.0-installer.tgz
+    rm -R bf2-linuxded-1.5.3153.0-installer.tgz
 fi
 
 echo "---Prepare Server---"
-if [ ! -f "${SERVER_DIR}/serverconfig.txt" ]; then
-  echo "---No serverconfig.txt found, downloading...---"
-  cd ${SERVER_DIR}
-  wget -qi serverconfig.txt "https://raw.githubusercontent.com/ich777/docker-terraria-server/master/config/serverconfig.txt"
+chmod +x $INSTALLER_DIR
+./opt/scripts/extract
+
 fi
 echo "---Server ready---"
 chmod -R 770 ${DATA_DIR}
