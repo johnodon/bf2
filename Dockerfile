@@ -2,7 +2,10 @@ FROM ubuntu
 
 MAINTAINER johnodon
 
-RUN apt-add-repository multiverse
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic multiverse" >> /etc/apt/source.list
+RUN echo "deb-src http://us.archive.ubuntu.com/ubuntu/ bionic multiverse">> /etc/apt/source.list
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse" >> /etc/apt/source.list
+RUN echo "deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse" >> /etc/apt/source.list
 RUN apt-get update && apt-get -y dist-upgrade
 RUN apt-get -y install wget screen unzip curl expect
 
