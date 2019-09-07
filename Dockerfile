@@ -16,7 +16,7 @@ RUN mkdir $DATA_DIR
 RUN mkdir $SERVER_DIR
 RUN mkdir $INSTALLER_DIR
 RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
-RUN chown -R bf2 $DATA_DIR
+RUN chown -R bf2:bf2 $DATA_DIR
 
 RUN ulimit -n 2048
 
