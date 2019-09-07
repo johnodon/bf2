@@ -15,6 +15,7 @@ ENV SCRIPTS_DIR="/opt/scripts"
 ENV UID=99
 ENV GID=100
 
+RUN mkdir /serverfiles
 RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
 
 ADD /scripts/ /opt/scripts/
