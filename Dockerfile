@@ -10,15 +10,15 @@ RUN apt-get update && apt-get -y dist-upgrade
 RUN apt-get -y install wget screen unzip curl expect
 
 ENV DATA_DIR="/serverfiles"
-ENV SERVER_DIR="${DATA_DIR}/bf2"
-ENV INSTALLER_DIR="${DATA_DIR}/tmp"
+ENV SERVER_DIR="/serverfiles/bf2"
+ENV INSTALLER_DIR="/serverfiles/tmp"
 ENV SCRIPTS_DIR="/opt/scripts"
 ENV UID=99
 ENV GID=100
 
-RUN mkdir $DATA_DIR
-RUN mkdir $SERVER_DIR
-RUN mkdir $INSTALLER_DIR
+RUN mkdir /serverfiles
+RUN mkdir /serverfiles/bf2
+RUN mkdir /serverfiles/tmp
 RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
 RUN chown -R bf2 $DATA_DIR
 
