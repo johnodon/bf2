@@ -16,16 +16,13 @@ ENV SCRIPTS_DIR="/opt/scripts"
 ENV UID=99
 ENV GID=100
 
-RUN mkdir /serverfiles
-RUN mkdir -p /serverfiles/bf2
-RUN mkdir -p /serverfiles/config
-RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
-RUN chown -R bf2 $DATA_DIR
-
 ADD /scripts/ /opt/scripts/
 ADD /config/ /serverfiles/config/
 RUN chmod -R 770 /opt/scripts/
 RUN chown -R bf2 /opt/scripts
+
+RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
+RUN chown -R bf2 $DATA_DIR
 
 USER bf2
 
