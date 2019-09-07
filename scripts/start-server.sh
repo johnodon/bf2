@@ -4,9 +4,7 @@ echo "---BF2 Check---"
 if [ ! -f "${SERVER_DIR}/start.sh" ]; then
     echo "---BF2 not found, downloading!---"
     cd /serverfiles
-    wget ftp://ftp.bf-games.net/server-files/bf2/bf2-linuxded-1.5.3153.0-installer.tgz
-    tar -xvf bf2-linuxded-1.5.3153.0-installer.tgz
-    rm -R bf2-linuxded-1.5.3153.0-installer.tgz
+    wget http://bigfatmoose.com/bf2-linuxded-1.5.3153.0-installer.sh
     echo "---Prepare Server---"
     chmod +x /opt/scripts
     ./opt/scripts/extract
