@@ -5,17 +5,16 @@ cd /serverfiles
 if [ ! -f "/serverfiles/bf2-linuxded-1.5.3153.0-installer.tgz" ]; then
     echo "---BF2 source not found, downloading!---"
     wget -nc -q --show-progress --progress=bar:force:noscroll ftp://ftp.bf-games.net/server-files/bf2/bf2-linuxded-1.5.3153.0-installer.tgz
-    if [ ! -f "/serverfiles/bf2-linuxded-1.5.3153.0-installer.sh" ]; then
-        echo "---BF2 installer not found, extracting!---"
-        tar -xvf /serverfiles/bf2-linuxded-1.5.3153.0-installer.tgz -C /serverfiles
-        if [ ! -f "/serverfiles/bf2/start.sh" ]; then
-            echo "---BF2 server files not found, installing!---"
-            chmod +x /opt/scripts
-            /opt/scripts/extract
-        fi
-    fi
 fi
-
+if [ ! -f "/serverfiles/bf2-linuxded-1.5.3153.0-installer.sh" ]; then
+    echo "---BF2 installer not found, extracting!---"
+    tar -xvf /serverfiles/bf2-linuxded-1.5.3153.0-installer.tgz -C /serverfiles
+fi
+if [ ! -f "/serverfiles/bf2/start.sh" ]; then
+    echo "---BF2 server files not found, installing!---"
+    chmod +x /opt/scripts
+    /opt/scripts/extract
+fi
 if [ ! -f "/serverfiles/BF2Hub-Unranked-Linux-R3.tar.gz" ]; then
     echo "---BF2hub source not found, downloading!---"
     wget -nc -q --show-progress --progress=bar:force:noscroll https://www.bf2hub.com/downloads/BF2Hub-Unranked-Linux-R3.tar.gz
