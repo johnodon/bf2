@@ -11,8 +11,6 @@ RUN apt-get -y install wget screen unzip curl expect
 
 ENV DATA_DIR="/serverfiles"
 ENV SERVER_DIR="/serverfiles/bf2"
-ENV INSTALLER_DIR="/serverfiles/tmp"
-ENV MYCONFIG_DIR="/serverfiles/myconfig"
 ENV SCRIPTS_DIR="/opt/scripts"
 ENV UID=99
 ENV GID=100
@@ -20,7 +18,6 @@ ENV GID=100
 RUN useradd -d $DATA_DIR -s /bin/bash --uid $UID --gid $GID bf2
 
 ADD /scripts/ /opt/scripts/
-ADD /myconfig/ /serverfiles/myconfig/
 
 RUN chmod -R 770 /opt/scripts/
 RUN chown -R bf2 /opt/scripts
