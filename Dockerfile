@@ -9,6 +9,7 @@ RUN apt-get -y install wget screen unzip curl expect
 ENV DATA_DIR="/serverfiles"
 ENV SERVER_DIR="${DATA_DIR}/bf2"
 ENV INSTALLER_DIR="${DATA_DIR}/tmp"
+ENV SCRIPTS_DIR="/opt/scripts"
 ENV UID=99
 ENV GID=100
 
