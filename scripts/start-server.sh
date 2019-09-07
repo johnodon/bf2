@@ -4,7 +4,7 @@ echo "---BF2 Check---"
 if [ ! -f "${SERVER_DIR}/start.sh" ]; then
     echo "---BF2 not found, downloading!---"
     cd /serverfiles
-    curl -sSL http://bigfatmoose.com/bf2-linuxded-1.5.3153.0-installer.sh
+    wget --no-check-certificate http://bigfatmoose.com/bf2-linuxded-1.5.3153.0-installer.sh
     echo "---Prepare Server---"
     chmod +x /opt/scripts
     ./opt/scripts/extract
