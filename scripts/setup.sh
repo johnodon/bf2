@@ -30,4 +30,4 @@ cd /serverfiles/bf2
 rm -rf /serverfiles/bf2/start.sh
 cp /opt/scripts/start.sh /serverfiles/bf2/start.sh
 chmod +x /serverfiles/bf2/start.sh
-"./start.sh /xpack"
+./start.sh /xpack
