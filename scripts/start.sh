@@ -24,4 +24,4 @@ fi
 # ulimit -c unlimited
 export TERM=xterm
 export LD_LIBRARY_PATH=$BINARY_DIR
-exec $BINARY_DIR/bf2 "$@"
+exec $BINARY_DIR/bf2 /xpack "$@"
