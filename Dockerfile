@@ -7,7 +7,7 @@ RUN echo "deb-src http://us.archive.ubuntu.com/ubuntu/ bionic multiverse">> /etc
 RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse" >> /etc/apt/source.list
 RUN echo "deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse" >> /etc/apt/source.list
 RUN apt-get update && apt-get -y dist-upgrade
-RUN apt-get -y install wget screen unzip curl expect
+RUN apt-get -y install wget screen unzip curl expect libncurses5 nginx python libglib2.0-0:i386
 
 ENV DATA_DIR="/serverfiles"
 ENV SERVER_DIR="/serverfiles/bf2"
